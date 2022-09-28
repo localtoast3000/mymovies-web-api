@@ -6,7 +6,8 @@ function constructURL(endpoint, query = '') {
 
 async function getDiscoverMovies() {
   const result = await fetch(constructURL('/discover/movie'));
-  return result.json();
+  const data = await result.json();
+  return data.results;
 }
 
 module.exports = { getDiscoverMovies };
